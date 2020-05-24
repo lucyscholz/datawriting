@@ -63,7 +63,7 @@ function write(name, sourceKey, sourceTab, header, sourceCol1, sourceCol2,
   //filter data when three filters exist
   if (critCol1 != "" && critCol2 != "" && critCol3 != "") {
   Logger.log("3");
-     for (var i = header + 1; i < rawData.length; i++) {
+     for (var i = header; i < rawData.length; i++) {
         if(tf1 && rawData[i][critCol1] == crit1) {
           if(tf2 && rawData[i][critCol2] == crit2) {
             if(tf3 && rawData[i][critCol3] == crit3) {
@@ -106,7 +106,7 @@ function write(name, sourceKey, sourceTab, header, sourceCol1, sourceCol2,
   //filter data when two filters exist
   if (critCol1 != "" && critCol2 != "" && critCol3 == "") {
   Logger.log("2");
-     for (var i = header + 1; i < rawData.length; i++) {
+     for (var i = header; i < rawData.length; i++) {
        if(tf1 == true && rawData[i][critCol1] == crit1) {
          if(tf2 == true && rawData[i][critCol2] == crit2) {
            cleanData.push(rawData[i]);
@@ -130,7 +130,7 @@ function write(name, sourceKey, sourceTab, header, sourceCol1, sourceCol2,
   //filter for data when only one filter exists
   if (critCol1 != "" && critCol2 == "" && critCol3 == "") {
   Logger.log("1");
-     for (var i = header + 1; i < rawData.length; i++) {
+     for (var i = header; i < rawData.length; i++) {
        if(tf1 == true && rawData[i][critCol1] == crit1) {
          cleanData.push(rawData[i]);
        }
